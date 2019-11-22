@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="container" style="margin-top:100px;">
+        <div class="card col-4">
+            <div class="card-body">
+
+                <h4>
+                    <i class="fas fa-cart-arrow-down text-primary"></i> Venda
+                </h4>
+                <hr>
+                <form method="post">
+                    <div class="form-group">
+                        <label for="nome_vendedor">Valor</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">$</span>
+
+                            </div>
+                            <input type="number" class="form-control" id="nome_vendedor" name="nome_vendedor" value="">
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf_vendedor">Data</label> <input type="text" class="form-control" id="cpf_vendedor" name="cpf_vendedor" value="" placeholder="dd/mm/aaaa">
+                    </div>
+                    <div class="form-group">
+                        <label for="nome_vendedor">Pagamento</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01">
+                              <option selected>A vista</option>
+                              <option value="1">Cartão - Débito</option>
+                              <option value="2">Cartão - Crédito</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" style="margin-right:5px;margin-top: 30px;">Salvar</button>
+                        <button type="submit " class="btn btn-danger " style="margin-top: 30px;">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
