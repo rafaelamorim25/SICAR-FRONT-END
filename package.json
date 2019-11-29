@@ -21,6 +21,7 @@
     "@angular/router": "~8.0.1",
     "@types/datatables.net": "^1.10.18",
     "angular-datatables": "^8.0.0",
+    "angular-imask": "^5.2.1",
     "bootstrap": "^4.3.1",
     "chart.js": "^2.9.3",
     "core-js": "^3.4.1",

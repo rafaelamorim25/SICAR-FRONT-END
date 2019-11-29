@@ -37,8 +37,8 @@
                 <tbody align="center">
                     <tr *ngFor="let cliente of resources">
                         <th>{{ cliente.nome }}</th>
-                        <td>{{ cliente.cpf }}</td>
-                        <td>{{ cliente.contato }}</td>
+                        <td>{{ maskCpf(cliente.cpf) }}</td>
+                        <td>{{ maskNumber(cliente.contato) }}</td>
                         <td>
                             <a [routerLink]="[cliente.id, 'details']">
                                 <i class="fas fa-list text-primary"></i>
@@ -48,7 +48,7 @@
                         <td>
                             <a [routerLink]="[cliente.id, 'edit']">
                                 <i class="fas fa-edit text-primary mr-3"></i>
-                            </a> 
+                            </a>
                             <a [routerLink]="[]" (click)="deleteResource(cliente)">
                                 <i class="fas fa-trash-alt text-danger"></i>
                             </a>

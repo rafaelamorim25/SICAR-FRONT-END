@@ -98,7 +98,6 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel<any>
 
     this.resourceService.create(resource)
       .subscribe(
-        // tslint:disable-next-line: no-shadowed-variable
         resource => this.actionsForSuccess(resource),
         error => this.actionsForError(error)
       )
@@ -128,7 +127,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel<any>
 
     this.submittingForm = false;
 
-    if(error.status === 422) {
+    if(error.status === 422 || error.status === 500) {
       this.serverErrorMessages = JSON.parse(error._body).errors;
     } else {
       this.serverErrorMessages = ['Falha na comunicação com o servidor. Por favor, tente mais tarde.']

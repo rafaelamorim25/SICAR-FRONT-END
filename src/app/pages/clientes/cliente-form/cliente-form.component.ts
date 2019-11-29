@@ -21,19 +21,9 @@ constructor(
   protected buildResourceForm() {
     this.resourceForm = this.formBuilder.group({
       id: [null],
-      nome: [null, [Validators.required, Validators.minLength(2)]],
-      cpf: [null, [Validators.required]],
-      contato: [null, [Validators.required]]
+      nome: [null, [Validators.required, Validators.minLength(6)]],
+      cpf: [null, [Validators.required, Validators.minLength(11)]],
+      contato: [null, [Validators.required, Validators.minLength(11)]]
     });
   }
-
-  protected creationPageTitle(): string {
-    return 'Cadastro de Nova Categoria';
-  }
-
-  protected editionPageTitle(): string {
-    const categoryName = this.resource.nome || '';
-    return 'Editando Categoria: ' + categoryName;
-  }
-
 }

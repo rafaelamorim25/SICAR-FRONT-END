@@ -17,7 +17,7 @@ export class ClienteDetailsComponent extends BaseResourceFormComponent<Cliente> 
     ) {
       super(injector, new Cliente(), clienteService, Cliente.fromJson);
     }
-  
+
     protected buildResourceForm() {
       this.resourceForm = this.formBuilder.group({
         id: [null],
@@ -26,14 +26,4 @@ export class ClienteDetailsComponent extends BaseResourceFormComponent<Cliente> 
         contato: [null, [Validators.required]]
       });
     }
-  
-    protected creationPageTitle(): string {
-      return 'Cadastro de Nova Categoria';
-    }
-  
-    protected editionPageTitle(): string {
-      const categoryName = this.resource.nome || '';
-      return 'Editando Categoria: ' + categoryName;
-    }
-  
   }

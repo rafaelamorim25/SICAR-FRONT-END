@@ -3,6 +3,7 @@ import { BaseResourceListComponent } from '../../../shared/components/base-resou
 import { Cliente } from '../shared/cliente.model';
 import { ClienteService } from '../shared/cliente.service';
 import { Alert } from 'selenium-webdriver';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-cliente-list',
@@ -23,7 +24,7 @@ export class ClienteListComponent extends BaseResourceListComponent<Cliente> {
       Deseja realmente excluir este cliente?
       Nome: ${resource.nome}
       CPF: ${resource.cpf}
-      Contato: ${resource.contato} 
+      Contato: ${resource.contato}
       `);
 
     if (mustDelete) {
@@ -47,5 +48,13 @@ export class ClienteListComponent extends BaseResourceListComponent<Cliente> {
         element.nome.includes(key) || element.cpf.includes(key) || element.contato.includes(key)
       );
     }
+  }
+
+  maskCpf(cpf: string): string {
+    return cpf.substring(0, 3) + '.' + cpf.substring(3, 6) + '.' + cpf.substring(6, 9) + '-' + cpf.substring(9, 11);
+  }
+
+  maskNumber(num: string): string {
+    return '(' + num.substring(0, 2) + ') ' + num.substring(2, 7) + '-' + num.substring(7, 11);
   }
 }
