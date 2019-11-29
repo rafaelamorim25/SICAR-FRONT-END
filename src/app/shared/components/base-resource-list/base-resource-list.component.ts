@@ -35,9 +35,7 @@ export abstract class BaseResourceListComponent<T extends BaseResourceModel<any>
         .delete(resource.id)
         .subscribe(
           () =>
-            (this.resources = this.resources.filter(
-              element => element !== resource
-            )),
+            (this.refresh()),
           () => alert('Erro ao tentar excluir!')
         );
     }
