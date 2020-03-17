@@ -53,30 +53,11 @@
                             </tr>
                         </thead>
                         <tbody align="center">
-                            <tr>
-                                <td>R$ 230,00</td>
-                                <td>18/10/2019</td>
+                            <tr *ngFor="let venda of resource.vendas">
+                                <td>{{ venda.valor }}</td>
+                                <td>{{ venda.data }}</td>
                                 <td>A vista</td>
 
-                                <td><a routerLink="id/edit"><i class="fas fa-edit text-primary"></i></a> <i class="fas fa-trash-alt text-danger"></i></td>
-                            </tr>
-                            <tr>
-                                <td>R$ 230,00</td>
-                                <td>18/10/2019</td>
-                                <td>A prazo</td>
-                                <td><a routerLink="id/edit"><i class="fas fa-edit text-primary"></i></a> <i class="fas fa-trash-alt text-danger"></i></td>
-                            </tr>
-                            <tr>
-                                <td>R$ 230,00</td>
-                                <td>18/10/2019</td>
-                                <td>Cartão - Débito</td>
-                                <td><a routerLink="id/edit"><i class="fas fa-edit text-primary"></i></a> <i class="fas fa-trash-alt text-danger"></i></td>
-                            </tr>
-
-                            <tr>
-                                <td>R$ 230,00</td>
-                                <td>18/10/2019</td>
-                                <td>Cartão - Crédito</td>
                                 <td><a routerLink="id/edit"><i class="fas fa-edit text-primary"></i></a> <i class="fas fa-trash-alt text-danger"></i></td>
                             </tr>
                         </tbody>

@@ -28,25 +28,24 @@
                     <tr align="center">
                         <th>Cliente</th>
                         <th>Data</th>
-                        <th>Forma de pagamento</th>
                         <th>Valor</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody align="center">
-                    <tr *ngFor="let venda of resources">
-                        <td>{{ venda.cliente.nome }}</td>
-                        <td>{{ venda.data }}</td>
+                    <tr *ngFor="let recebimento of resources">
+                        <td>{{ recebimento.cliente.nome }}</td>
+                        <td>{{ recebimento.data }}</td>
                         <td></td>
-                        <td>R${{ venda.valor }}</td>
+                        <td>R${{ recebimento.valor }}</td>
                         <td>
-                            <a [routerLink]="[venda.cliente.id, 'details']">
+                            <a [routerLink]="[recebimento.cliente.id, 'details']">
                                 <i class="fas fa-user text-primary mr-3"></i>
                             </a>
-                            <a [routerLink]="[venda.id, 'edit']">
+                            <a [routerLink]="[recebimento.id, 'edit']">
                                 <i class="fas fa-edit text-primary mr-3"></i>
                             </a>
-                            <a [routerLink]="[]" (click)="deleteResource(venda)">
+                            <a [routerLink]="[]" (click)="deleteResource(recebimento)">
                                 <i class="fas fa-trash-alt text-danger"></i>
                             </a>
                         </td>
@@ -56,3 +55,4 @@
         </div>
     </div>
 </div>
+

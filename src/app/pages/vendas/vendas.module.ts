@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '../../shared/shared.module';
 
 import { VendasRoutingModule } from './vendas-routing.module';
 import { VendaFormComponent } from './venda-form/venda-form.component';
@@ -10,6 +11,7 @@ import { VendaClienteFormComponent } from './venda-cliente-form/venda-cliente-fo
   declarations: [VendaFormComponent, VendaListComponent, VendaClienteFormComponent],
   imports: [
     CommonModule,
+    SharedModule,
     VendasRoutingModule
   ]
 })

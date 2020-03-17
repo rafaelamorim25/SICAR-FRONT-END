@@ -35,8 +35,8 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel<any>
 
   ngOnInit() {
     this.setCurrentAction();
-    this.buildResourceForm();
     this.loadResource();
+    this.buildResourceForm();
   }
 
   ngAfterContentChecked(){
@@ -71,6 +71,9 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel<any>
         (resource) => {
           this.resource = resource;
           this.resourceForm.patchValue(resource) // binds loaded resource data to resourceForm
+          console.log('Oque foi carregado do servidor ->>>');
+          console.log(resource);
+          console.log(resource)
         },
         (error) => alert('Ocorreu um erro no servidor, tente mais tarde.')
       )

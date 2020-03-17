@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path: 'clientes', loadChildren: 'src/app/pages/clientes/clientes.module#ClientesModule'},
-  {path: 'lancamentos', loadChildren: 'src/app/pages/lancamentos/lancamentos.module#LancamentosModule'},
   {path: 'relatorios', loadChildren: 'src/app/pages/relatorios/relatorios.module#RelatoriosModule'},
+  {path: 'recebimentos', loadChildren: 'src/app/pages/recebimentos/recebimentos.module#RecebimentosModule'},
   {path: 'vendas', loadChildren: 'src/app/pages/vendas/vendas.module#VendasModule'}
 ];
 

@@ -1,23 +1,23 @@
 import { Component, Injector } from '@angular/core';
-import { Venda } from '../shared/venda.model';
+import { Recebimento } from '../shared/recebimento.model';
 import { BaseResourceListComponent } from '../../../shared/components/base-resource-list/base-resource-list.component';
-import {VendaService} from '../shared/venda.service';
+import {RecebimentoService} from '../shared/recebimento.service';
 
 @Component({
-  selector: 'app-venda-list',
-  templateUrl: './venda-list.component.html',
-  styleUrls: ['./venda-list.component.css']
+  selector: 'app-recebimentos-list',
+  templateUrl: './recebimentos-list.component.html',
+  styleUrls: ['./recebimentos-list.component.css']
 })
-export class VendaListComponent extends BaseResourceListComponent<Venda> {
+export class RecebimentosListComponent extends BaseResourceListComponent<Recebimento> {
 
   constructor(
-    private vendaService: VendaService,
+    private recebimentoService: RecebimentoService,
     protected injector: Injector
   ) {
-    super(injector, vendaService);
+    super(injector, recebimentoService);
   }
 
-  deleteResource(resource: Venda) {
+  deleteResource(resource: Recebimento) {
     const mustDelete = confirm(`
       Deseja realmente excluir este cliente?
       Data: ${resource.data}
@@ -26,7 +26,7 @@ export class VendaListComponent extends BaseResourceListComponent<Venda> {
       `);
 
     if (mustDelete) {
-      this.vendaService
+      this.recebimentoService
         .delete(resource.id)
         .subscribe(
           () =>
