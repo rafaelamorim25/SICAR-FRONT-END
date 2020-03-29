@@ -6,7 +6,8 @@ export class Recebimento extends BaseResourceModel<number> {
     public id?: number,
     public valor?: number,
     public data?: Date,
-    public cliente?: Cliente
+    public cliente?: Cliente,
+    public clienteId?: number
   ) {
     super();
   }

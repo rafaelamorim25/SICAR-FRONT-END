@@ -1,24 +1,24 @@
 import { Component, Injector } from '@angular/core';
-import { Venda } from '../shared/venda.model';
+import { Recebimento } from '../shared/recebimento.model';
 import { BaseResourceFormComponent } from 'src/app/shared/components/base-resource-form/base-resource-form.component';
-import { VendaService } from './../shared/venda.service';
+import { RecebimentoService } from './../shared/recebimento.service';
 import { Validators } from '@angular/forms';
 import { switchMap } from 'rxjs/operators';
 import { Cliente } from '../../clientes/shared/cliente.model';
 import { ClienteService } from '../../clientes/shared/cliente.service';
 
 @Component({
-  selector: 'app-venda-form',
-  templateUrl: './venda-form.component.html',
-  styleUrls: ['./venda-form.component.css']
+  selector: 'app-recebimento-form',
+  templateUrl: './recebimento-form.component.html',
+  styleUrls: ['./recebimento-form.component.css']
 })
-export class VendaFormComponent extends BaseResourceFormComponent<Venda>{
+export class RecebimentoFormComponent extends BaseResourceFormComponent<Recebimento>{
 
   constructor(
-    protected vendaService: VendaService,
+    protected recebimentoService: RecebimentoService,
     protected injector: Injector
   ) {
-    super(injector, new Venda(), vendaService, Venda.fromJson);
+    super(injector, new Recebimento(), recebimentoService, Recebimento.fromJson);
   }
 
   protected buildResourceForm() {

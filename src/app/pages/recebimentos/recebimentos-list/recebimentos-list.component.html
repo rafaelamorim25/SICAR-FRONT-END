@@ -3,7 +3,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-10">
-                    <h4><i class="fas fa-cart-arrow-down text-primary"></i> Vendas</h4>
+                    <h4><i class="fas fa-piggy-bank text-success"></i> Recebimentos</h4>
                 </div>
                 <div class="col-2">
                     <a routerLink="new"><button type="button" class="btn btn-primary" style="margin-left:50px;">Adicionar</button></a>
@@ -14,7 +14,7 @@
                 <form [formGroup]="searchForm" (click)="search()" class="col-6">
                     <div class="row form-group">
                         <div class="form-group col-md-9" style="text-align: left">
-                            <input type="text" class="form-control" name="keyword" id="keyword" placeholder="Pesquise uma venda" formControlName="keyword">
+                            <input type="text" class="form-control" name="keyword" id="keyword" placeholder="Pesquise um recebimento" formControlName="keyword">
                         </div>
                         <div class="form-group col-md-3" style="text-align: right">
                             <button type="submit" class="btn btn-primary form-control md-2">Buscar</button>
@@ -36,10 +36,9 @@
                     <tr *ngFor="let recebimento of resources">
                         <td>{{ recebimento.cliente.nome }}</td>
                         <td>{{ recebimento.data }}</td>
-                        <td></td>
-                        <td>R${{ recebimento.valor }}</td>
+                        <td>R$ {{ recebimento.valor }}</td>
                         <td>
-                            <a [routerLink]="[recebimento.cliente.id, 'details']">
+                            <a routerLink="/clientes/{{ recebimento.cliente.id }}/details">
                                 <i class="fas fa-user text-primary mr-3"></i>
                             </a>
                             <a [routerLink]="[recebimento.id, 'edit']">

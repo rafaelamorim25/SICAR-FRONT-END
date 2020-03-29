@@ -54,7 +54,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel<any>
   }
 
   protected setCurrentAction() {
-    if(this.route.snapshot.url[0].path === 'new') {
+    if(this.route.snapshot.url[0].path === 'new' || this.route.snapshot.url[1].path === 'new') {
       this.currentAction = 'new';
     } else {
       this.currentAction = 'edit';
@@ -73,7 +73,6 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel<any>
           this.resourceForm.patchValue(resource) // binds loaded resource data to resourceForm
           console.log('Oque foi carregado do servidor ->>>');
           console.log(resource);
-          console.log(resource)
         },
         (error) => alert('Ocorreu um erro no servidor, tente mais tarde.')
       )
@@ -108,7 +107,8 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel<any>
 
   protected updateResource(){
     const resource: T = this.jsonDataToResourceFn(this.resourceForm.value);
-
+    console.log('Resource que vai ser atualizado ->')
+    console.log(resource)
     this.resourceService.update(resource)
       .subscribe(
         resource => this.actionsForSuccess(resource),

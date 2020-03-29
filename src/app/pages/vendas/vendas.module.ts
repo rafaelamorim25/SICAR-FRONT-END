@@ -5,10 +5,9 @@ import { SharedModule } from '../../shared/shared.module';
 import { VendasRoutingModule } from './vendas-routing.module';
 import { VendaFormComponent } from './venda-form/venda-form.component';
 import { VendaListComponent } from './venda-list/venda-list.component';
-import { VendaClienteFormComponent } from './venda-cliente-form/venda-cliente-form.component';
 
 @NgModule({
-  declarations: [VendaFormComponent, VendaListComponent, VendaClienteFormComponent],
+  declarations: [VendaFormComponent, VendaListComponent],
   imports: [
     CommonModule,
     SharedModule,

@@ -6,8 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path: '', component: VendaListComponent},
-  {path: 'new', component: VendaFormComponent},
-  {path: ':id/new', component: VendaClienteFormComponent},
+  {path: ':id/new', component: VendaFormComponent},
   {path: ':id/edit', component: VendaFormComponent}
 ];
 

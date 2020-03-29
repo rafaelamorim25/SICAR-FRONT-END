@@ -4,9 +4,10 @@ import { Cliente } from '../../clientes/shared/cliente.model';
 export class Venda extends BaseResourceModel<number> {
   constructor(
     public id?: number,
+    public clienteId?:number,
     public valor?: number,
     public data?: Date,
-    public cliente?: Cliente
+    public cliente?: Cliente,
   ) {
     super();
   }

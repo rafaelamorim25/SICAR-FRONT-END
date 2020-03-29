@@ -40,7 +40,7 @@
                         <td></td>
                         <td>R${{ venda.valor }}</td>
                         <td>
-                            <a [routerLink]="[venda.cliente.id, 'details']">
+                            <a routerLink="/clientes/{{ venda.cliente.id }}/details">
                                 <i class="fas fa-user text-primary mr-3"></i>
                             </a>
                             <a [routerLink]="[venda.id, 'edit']">
