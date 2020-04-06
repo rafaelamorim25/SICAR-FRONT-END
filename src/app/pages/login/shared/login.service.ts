@@ -22,7 +22,7 @@ export class LoginService {
           if(r.headers.get('Authorization') !== null){
             console.log('Deu certo essa merda');
             localStorage.setItem('Authorization', r.headers.get('Authorization'));
-            //this.router.navigate(['/home']);
+            this.router.navigate(['/clientes']);
           }else{
               console.log('Voce continua na merda guerreiro');
           }

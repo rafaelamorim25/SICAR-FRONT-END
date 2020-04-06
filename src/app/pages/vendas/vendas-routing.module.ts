@@ -1,4 +1,3 @@
-import { VendaClienteFormComponent } from './venda-cliente-form/venda-cliente-form.component';
 import { VendaListComponent } from './venda-list/venda-list.component';
 import { VendaFormComponent } from './venda-form/venda-form.component';
 import { NgModule } from '@angular/core';

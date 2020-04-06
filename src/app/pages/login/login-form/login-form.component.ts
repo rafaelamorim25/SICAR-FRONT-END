@@ -48,7 +48,7 @@ export class LoginFormComponent implements OnInit {
       }
 
       this.loading = true;
-      this.loginService.login(new Usuario('usuario', 'senha'));
+      this.loginService.login(new Usuario(this.f.email.value, this.f.senha.value));
   }
 
 }

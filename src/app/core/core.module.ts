@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { DefaultNavbarComponent } from './components/default-navbar/default-navbar.component';
 
 @NgModule({
   imports: [
@@ -14,12 +15,13 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   declarations: [
-  ],
+  DefaultNavbarComponent],
   exports: [
     // shared modules
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    DefaultNavbarComponent
   ]
 })
 export class CoreModule { }
