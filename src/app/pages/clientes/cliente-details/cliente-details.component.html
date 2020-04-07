@@ -9,22 +9,20 @@
             <form [formGroup]="resourceForm" style="margin-bottom: 0px;">
                 <div class="form-group row">
                     <div class="form-group col-3">
-                        <label for="nome">Nome</label> <input type="text" class="form-control bg-white" id="nome" formControlName="nome" disabled="disabled">
+                        <label for="nome">Nome</label> <input type="text" class="form-control bg-white" id="nome"
+                            formControlName="nome" disabled="disabled">
                     </div>
                     <div class="form-group col-3">
-                        <label for="cpf">CPF</label> <input type="text" class="form-control bg-white" id="cpf" formControlName="cpf" disabled="disabled">
+                        <label for="cpf">CPF</label> <input type="text" class="form-control bg-white" id="cpf"
+                            formControlName="cpf" disabled="disabled">
                     </div>
                     <div class="form-group col-3">
-                        <label for="contato">Contato</label> <input type="text" class="form-control bg-white" id="contato" formControlName="contato" disabled="disabled">
+                        <label for="contato">Contato</label> <input type="text" class="form-control bg-white"
+                            id="contato" formControlName="contato" disabled="disabled">
                     </div>
                     <div class="form-group col-3">
-                        <label for="nome_vendedor">Saldo</label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">$</span>
-                            </div>
-                            <input type="number" class="form-control text-danger  bg-white" id="nome_vendedor" name="nome_vendedor" value="230.00" disabled="disabled">
-                        </div>
+                        <label for="saldo">Saldo</label> <input type="text" class="form-control  bg-white" id="saldo"
+                        value="R$ {{resource.saldo}}" disabled="disabled">
                     </div>
                 </div>
             </form>
@@ -39,7 +37,8 @@
                             <h4><i class="fas fa-cart-arrow-down text-primary"></i> Vendas</h4>
                         </div>
                         <div class="col-2">
-                            <a routerLink="/vendas/{{ resource.id }}/new"><button type="button" class="btn btn-primary" style="margin-left:50px;">Vender</button></a>
+                            <a routerLink="/vendas/{{ resource.id }}/new"><button type="button" class="btn btn-primary"
+                                    style="margin-left:50px;">Vender</button></a>
                         </div>
                     </div>
                     <hr>
@@ -55,10 +54,13 @@
                         <tbody align="center">
                             <tr *ngFor="let venda of resource.vendas">
                                 <td>{{ venda.data }}</td>
-                                <td>R${{ venda.valor }}</td>
+                                <td>R$ {{ venda.valor }}</td>
                                 <td>A vista</td>
 
-                                <td><a routerLink="/vendas/{{ venda.id }}/edit"><i class="fas fa-edit text-primary"></i></a> <i class="fas fa-trash-alt text-danger"></i></td>
+                                <td><a routerLink="/vendas/{{ venda.id }}/edit"><i
+                                            class="fas fa-edit text-primary"></i></a>
+                                    <a [routerLink]="[]" (click)="deleteVenda(venda)"><i
+                                            class="fas fa-trash-alt text-danger"></i></a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -69,7 +71,8 @@
                             <h4><i class="fas fa-piggy-bank text-success"></i> Recebimentos</h4>
                         </div>
                         <div class="col-2">
-                            <a routerLink="/recebimentos/{{ resource.id }}/new"><button type="button" class="btn btn-success" style="margin-left:50px;">Receber</button></a>
+                            <a routerLink="/recebimentos/{{ resource.id }}/new"><button type="button"
+                                    class="btn btn-success" style="margin-left:50px;">Receber</button></a>
                         </div>
                     </div>
                     <hr>
@@ -85,7 +88,10 @@
                             <tr *ngFor="let recebimento of resource.recebimentos">
                                 <td>{{ recebimento.data }}</td>
                                 <td> R$ {{ recebimento.valor }}</td>
-                                <td><a routerLink="/recebimentos/{{ recebimento.id }}/edit"><i class="fas fa-edit text-primary"></i></a> <i class="fas fa-trash-alt text-danger"></i></td>
+                                <td><a routerLink="/recebimentos/{{ recebimento.id }}/edit"><i
+                                            class="fas fa-edit text-primary"></i></a> 
+                                            <a [routerLink]="[]" (click)="deleteRecebimento(recebimento)"><i
+                                        class="fas fa-trash-alt text-danger"></i></a></td>
                             </tr>
                         </tbody>
                     </table>

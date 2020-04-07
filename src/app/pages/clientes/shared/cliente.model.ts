@@ -9,7 +9,8 @@ export class Cliente extends BaseResourceModel<number> {
     public cpf?: string,
     public contato?: string,
     public vendas?: Array<Venda>,
-    public recebimentos?: Array<Recebimento>
+    public recebimentos?: Array<Recebimento>,
+    public saldo?: number
   ) {
     super();
   }

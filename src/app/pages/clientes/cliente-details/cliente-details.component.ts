@@ -3,6 +3,10 @@ import { BaseResourceFormComponent } from 'src/app/shared/components/base-resour
 import { Cliente } from '../shared/cliente.model';
 import { ClienteService } from '../shared/cliente.service';
 import { Validators } from '@angular/forms';
+import { VendaService } from '../../vendas/shared/venda.service';
+import { RecebimentoService } from '../../recebimentos/shared/recebimento.service';
+import { Venda } from '../../vendas/shared/venda.model';
+import { Recebimento } from '../../recebimentos/shared/recebimento.model';
 
 @Component({
   selector: 'app-cliente-details',
@@ -13,7 +17,9 @@ export class ClienteDetailsComponent extends BaseResourceFormComponent<Cliente> 
 
   constructor(
       protected clienteService: ClienteService,
-      protected injector: Injector
+      protected injector: Injector,
+      private vendaService: VendaService,
+      private recebimentoService: RecebimentoService
     ) {
       super(injector, new Cliente(), clienteService, Cliente.fromJson);
     }
@@ -23,7 +29,8 @@ export class ClienteDetailsComponent extends BaseResourceFormComponent<Cliente> 
         id: [null],
         nome: [null, [Validators.required, Validators.minLength(2)]],
         cpf: [null, [Validators.required]],
-        contato: [null, [Validators.required]]
+        contato: [null, [Validators.required]],
+        saldo: [null, [Validators.required]]
       });
     }
 
@@ -34,4 +41,41 @@ export class ClienteDetailsComponent extends BaseResourceFormComponent<Cliente> 
     maskNumber(num: string): string {
       return '(' + num.substring(0, 2) + ') ' + num.substring(2, 7) + '-' + num.substring(7, 11);
     }
+
+    deleteVenda(venda: Venda) {
+      const mustDelete = confirm(`
+        Deseja realmente excluir esta venda?
+        Data: ${venda.data}
+        Valor: ${venda.valor}
+        `);
+  
+      if (mustDelete) {
+        this.vendaService
+          .delete(venda.id)
+          .subscribe(
+            () =>
+              this.router.navigate(['/vendas']),
+            () => alert('Erro ao tentar excluir!')
+          );
+      }
+    }
+
+    deleteRecebimento(recebimento: Recebimento) {
+      const mustDelete = confirm(`
+        Deseja realmente excluir este recebimento?
+        Data: ${recebimento.data}
+        Valor: ${recebimento.valor}
+        `);
+  
+      if (mustDelete) {
+        this.recebimentoService
+          .delete(recebimento.id)
+          .subscribe(
+            () =>
+              this.router.navigate(['/recebimentos']),
+            () => alert('Erro ao tentar excluir!')
+          );
+      }
+    }
+
   }
