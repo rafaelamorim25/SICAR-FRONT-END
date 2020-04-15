@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sicar-front-end';
+  status: boolean = false;
+
+  toggleSidebar() {
+    this.status = !this.status;
+  }
 }

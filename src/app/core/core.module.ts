@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { DefaultNavbarComponent } from './components/default-navbar/default-navbar.component';
+import { DefaultSidebarComponent } from './components/default-sidebar/default-sidebar.component';
 
 @NgModule({
   imports: [
@@ -15,13 +16,16 @@ import { DefaultNavbarComponent } from './components/default-navbar/default-navb
     RouterModule
   ],
   declarations: [
-  DefaultNavbarComponent],
+    DefaultNavbarComponent,
+    DefaultSidebarComponent
+  ],
   exports: [
     // shared modules
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    DefaultNavbarComponent
+    DefaultNavbarComponent,
+    DefaultSidebarComponent
   ]
 })
 export class CoreModule { }

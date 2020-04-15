@@ -1,10 +1,6 @@
-<app-default-navbar></app-default-navbar>
+<app-default-navbar [(collapsed)]="status"></app-default-navbar>
+<app-default-sidebar [collapsed]="status"></app-default-sidebar>
 <div id="viewport">
-    <!-- Sidebar -->
-    <div id="sidebar">
-        <div class="nav pt-5">
-        </div>
-    </div>
     <!-- Content -->
     <div id="content">
         <nav class="navbar navbar-default">

@@ -1,0 +1,68 @@
+<!-- Sidebar  -->
+<nav id="sidebar" [ngClass]="{active: collapsed}" class="bg-primary">
+    <div class="sidebar-header d-flex align-items-center bg-ligth" [ngClass]="collapsed ? 'justify-content-center' : ''">
+        <h3>SICAR</h3>
+        <strong>S</strong>
+    </div>
+    <ul class="list-unstyled components">
+        <li routerLinkActive="active">
+            <a href="#clientesSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fas fa-users"></i>
+                Clientes
+            </a>
+            <ul class="collapse list-unstyled" id="clientesSubmenu">
+                <li>
+                    <a class="dropdown-item" routerLink="/clientes">Listar</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" routerLink="/clientes/new">Adicionar</a>
+                </li>
+            </ul>
+        </li>
+        <li routerLinkActive="active">
+            <a href="#vendasSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fas fa-cart-arrow-down"></i>
+                Vendas
+            </a>
+            <ul class="collapse list-unstyled" id="vendasSubmenu">
+                <li>
+                    <a class="dropdown-item" routerLink="/vendas">Listar</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" routerLink="/vendas/new">Adicionar</a>
+                </li>
+            </ul>
+        </li>
+        <li routerLinkActive="active">
+            <a href="#recebimentosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fas fa-piggy-bank"></i>
+                Recebimentos
+            </a>
+            <ul class="collapse list-unstyled" id="recebimentosSubmenu">
+                <li>
+                    <a class="dropdown-item" routerLink="/recebimentos">Listar</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" routerLink="/recebimentos/new">Adicionar</a>
+                </li>
+            </ul>
+        </li>
+        <li routerLinkActive="active">
+            <a href="#relatoriosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fas fa-chart-line"></i>
+                Relatórios
+            </a>
+            <ul class="collapse list-unstyled" id="relatoriosSubmenu">
+                <li>
+                    <a class="dropdown-item" routerLink="/relatorios/clientes-report">Clientes</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" routerLink="/relatorios/lancamentos-report">Recebimentos</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" routerLink="/relatorios/vendas-report">Vendas</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>

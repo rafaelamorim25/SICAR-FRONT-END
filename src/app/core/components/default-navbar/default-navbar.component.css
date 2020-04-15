@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
 .footer {
     position: fixed;
     grid-area: footer;
@@ -9,11 +10,25 @@
     background-color: #E6E6E6;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
 body {
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+}
+
+.navbar {
+    padding: 15px 35px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-left: 250px;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.navbar.active {
+    margin-left: 100px;
 }
 
 

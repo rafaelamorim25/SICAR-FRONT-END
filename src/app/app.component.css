@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
 .footer {
     position: fixed;
     grid-area: footer;
@@ -9,7 +10,6 @@
     background-color: #E6E6E6;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
 body {
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
