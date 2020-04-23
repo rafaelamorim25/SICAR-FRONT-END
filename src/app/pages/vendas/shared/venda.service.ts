@@ -2,6 +2,7 @@ import { Injectable, Injector } from '@angular/core';
 
 import { BaseResourceService } from '../../../shared/services/base-resource.service';
 import { Venda } from './venda.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

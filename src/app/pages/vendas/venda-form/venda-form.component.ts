@@ -1,5 +1,5 @@
 import { Component, Injector } from '@angular/core';
-import { Venda } from '../shared/venda.model';
+import { Venda, FormaPagamento } from '../shared/venda.model';
 import { BaseResourceFormComponent } from 'src/app/shared/components/base-resource-form/base-resource-form.component';
 import { VendaService } from './../shared/venda.service';
 import { Validators } from '@angular/forms';
@@ -26,7 +26,8 @@ export class VendaFormComponent extends BaseResourceFormComponent<Venda>{
       id: [null],
       valor: [null],
       data: [null],
-      clienteId: [null]
+      clienteId: [null],
+      formaPagamentoId: [null]
     });
   }
 
@@ -40,7 +41,8 @@ export class VendaFormComponent extends BaseResourceFormComponent<Venda>{
       .subscribe(
         (resource) => {
           this.resource = resource;
-          this.resource.clienteId = this.resource.cliente.id
+          this.resource.formaPagamentoId = this.resource.formaPagamento.id;
+          this.resource.clienteId = this.resource.cliente.id;
           this.resourceForm.patchValue(resource) // binds loaded resource data to resourceForm
           console.log('Oque foi carregado do servidor ->>>');
           console.log(resource);

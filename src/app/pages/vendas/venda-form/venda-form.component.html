@@ -10,17 +10,16 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="nomeCliente">Nome</label> <input type="text" class="form-control" id="nomeCliente"
-                                     value="{{resource.cliente.nome}}" disabled>
+                                <label for="nomeCliente">Nome</label> <input type="text" class="form-control"
+                                    id="nomeCliente" value="{{resource.cliente.nome}}" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="cpf">CPF</label> <input type="number" class="form-control" id="cpf"
-                                     value="{{resource.cliente.cpf}}" disabled>
+                                    value="{{resource.cliente.cpf}}" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="contato">Contato</label> <input type="number" class="form-control"
-                                    id="contato" value="{{ resource.cliente.contato}}"
-                                    disabled>
+                                    id="contato" value="{{ resource.cliente.contato}}" disabled>
                             </div>
                         </div>
                         <div class="col-6">
@@ -29,8 +28,18 @@
                                     formControlName="valor">
                             </div>
                             <div class="form-group">
-                                <label for="data">Data</label> <input type="text" class="form-control"
-                                    id="data" formControlName="data">
+                                <label for="data">Data</label> <input type="text" class="form-control" id="data"
+                                    formControlName="data">
+                            </div>
+                            <div class="form-group">
+                                <label for="formaPagamentoId">Forma de Pagamento</label>
+                                <select name="formaPagamentoId" id="formaPagamentoId" formControlName="formaPagamentoId"
+                                    class="form-control">
+                                    <option [value]="1">A vista</option>
+                                    <option [value]="2">A prazo</option>
+                                    <option [value]="3">Cartão de débito</option>
+                                    <option [value]="4">Cartão de crédito</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <button [disabled]="submittingForm || resourceForm.invalid" type="submit"
