@@ -97,7 +97,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel<any>
 
   protected createResource(){
     let resource: T = this.jsonDataToResourceFn(this.resourceForm.value);
-    console.log(resource);
+    console.log(JSON.stringify(resource));
     this.resourceService.create(resource)
       .subscribe(
         resource => this.actionsForSuccess(resource),
@@ -107,8 +107,9 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel<any>
 
   protected updateResource(){
     let resource: T = this.jsonDataToResourceFn(this.resourceForm.value);
+    Object.keys(resource).forEach(key => resource[key] === undefined && delete resource[key]);
     console.log('Resource que vai ser atualizado ->')
-    console.log(resource);
+    console.log(JSON.stringify(resource));
     this.resourceService.update(resource)
       .subscribe(
         resource => this.actionsForSuccess(resource),

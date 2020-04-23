@@ -37,7 +37,7 @@
                     <tr *ngFor="let venda of resources">
                         <td>{{ venda.cliente.nome }}</td>
                         <td>{{ venda.data }}</td>
-                        <td></td>
+                        <td>{{ venda.formaPagamento.descricao }}</td>
                         <td>R${{ venda.valor }}</td>
                         <td>
                             <a routerLink="/clientes/{{ venda.cliente.id }}/details">

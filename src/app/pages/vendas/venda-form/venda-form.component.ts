@@ -44,7 +44,7 @@ export class VendaFormComponent extends BaseResourceFormComponent<Venda>{
           this.resource.formaPagamentoId = this.resource.formaPagamento.id;
           this.resource.clienteId = this.resource.cliente.id;
           this.resourceForm.patchValue(resource) // binds loaded resource data to resourceForm
-          console.log('Oque foi carregado do servidor ->>>');
+          console.log('Oque foi carregado do servidor (edit) ->>>');
           console.log(resource);
         },
         (error) => alert('Ocorreu um erro no servidor, tente mais tarde.')
@@ -64,7 +64,7 @@ export class VendaFormComponent extends BaseResourceFormComponent<Venda>{
           this.resource.cliente = resource;
           this.resource.clienteId = this.resource.cliente.id;
           this.resourceForm.patchValue(this.resource) // binds loaded resource data to resourceForm
-          console.log('Oque foi carregado do servidor ->>>');
+          console.log('Oque foi carregado do servidor (new) ->>>');
           console.log(resource);
         },
         (error) => alert('Ocorreu um erro no servidor, tente mais tarde.')
