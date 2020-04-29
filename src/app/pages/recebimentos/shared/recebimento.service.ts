@@ -9,6 +9,6 @@ import { Recebimento } from './recebimento.model';
 export class RecebimentoService extends BaseResourceService<Recebimento> {
 
   constructor(protected injector: Injector) {
-    super('http://localhost:8080/recebimentos', injector, Recebimento.fromJson);
+    super('https://sicar-app.herokuapp.com/recebimentos', injector, Recebimento.fromJson);
   }
 }

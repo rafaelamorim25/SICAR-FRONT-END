@@ -9,6 +9,6 @@ import { BaseResourceService } from '../../../shared/services/base-resource.serv
 export class ClienteService extends BaseResourceService<Cliente> {
 
   constructor(protected injector: Injector) {
-    super('http://localhost:8080/clientes', injector, Cliente.fromJson);
+    super('https://sicar-app.herokuapp.com/clientes', injector, Cliente.fromJson);
   }
 }

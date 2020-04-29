@@ -5,6 +5,7 @@ import { RelatoriosRoutingModule } from './relatorios-routing.module';
 import { ClienteReportComponent } from './cliente-report/cliente-report.component';
 import { LancamentosReportComponent } from './lancamentos-report/lancamentos-report.component';
 import { VendasReportComponent } from './vendas-report/vendas-report.component';
+import { RecebimentosReportComponent } from './recebimentos-report/recebimentos-report.component';
 
 @NgModule({
   declarations: [ClienteReportComponent, LancamentosReportComponent, VendasReportComponent],

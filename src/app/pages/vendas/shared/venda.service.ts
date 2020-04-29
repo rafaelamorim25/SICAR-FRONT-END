@@ -10,6 +10,6 @@ import { Observable } from 'rxjs';
 export class VendaService extends BaseResourceService<Venda> {
 
   constructor(protected injector: Injector) {
-    super('http://localhost:8080/vendas', injector, Venda.fromJson);
+    super('https://sicar-app.herokuapp.com/vendas', injector, Venda.fromJson);
   }
 }
