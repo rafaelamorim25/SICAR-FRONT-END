@@ -10,7 +10,6 @@ export class LoginService {
   constructor(private http: HttpClient, private router: Router){}
 
   login(user: Usuario){
-    console.log(JSON.stringify(user));
     const headers: HttpHeaders = new HttpHeaders();
     headers.set('Content-Type', 'application/x-www-form-urlencoded');
     const resp: Observable<HttpResponse<any>> = this.http.post<HttpResponse<any>>
@@ -18,13 +17,9 @@ export class LoginService {
 
     resp.subscribe(
       r => {
-          console.log(r.headers)
           if(r.headers.get('Authorization') !== null){
-            console.log('Deu certo essa merda');
             localStorage.setItem('Authorization', r.headers.get('Authorization'));
             this.router.navigate(['/clientes']);
-          }else{
-              console.log('Voce continua na merda guerreiro');
           }
       }
     );

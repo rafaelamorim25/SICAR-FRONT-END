@@ -14,7 +14,6 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel<any>
 
   currentAction: string;
   resourceForm: FormGroup;
-  pageTitle: string;
   serverErrorMessages: string[] = null;
   submittingForm: boolean = false;
 
@@ -39,9 +38,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel<any>
     this.buildResourceForm();
   }
 
-  ngAfterContentChecked(){
-    this.setPageTitle();
-  }
+  ngAfterContentChecked(){}
 
   submitForm(){
     this.submittingForm = true;
@@ -71,28 +68,10 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel<any>
         (resource) => {
           this.resource = resource;
           this.resourceForm.patchValue(resource) // binds loaded resource data to resourceForm
-          console.log('Oque foi carregado do servidor ->>>');
-          console.log(resource);
         },
         (error) => alert('Ocorreu um erro no servidor, tente mais tarde.')
       )
     }
-  }
-
-  protected setPageTitle() {
-    if (this.currentAction === 'new') {
-      this.pageTitle = this.creationPageTitle();
-    } else {
-      this.pageTitle = this.editionPageTitle();
-    }
-  }
-
-  protected creationPageTitle(): string{
-    return 'Novo';
-  }
-
-  protected editionPageTitle(): string{
-    return 'Edição';
   }
 
   protected createResource(){

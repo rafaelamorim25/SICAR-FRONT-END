@@ -72,7 +72,7 @@ export class ClienteDetailsComponent extends BaseResourceFormComponent<Cliente> 
           .delete(recebimento.id)
           .subscribe(
             () =>
-              this.router.navigate(['/recebimentos']),
+              this.router.navigate(['']),
             () => alert('Erro ao tentar excluir!')
           );
       }

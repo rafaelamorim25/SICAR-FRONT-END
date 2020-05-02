@@ -48,8 +48,7 @@ export abstract class BaseResourceListComponent<T extends BaseResourceModel<any>
     .getAll()
     .subscribe(
       resources => {
-        (this.resources = resources.sort((a, b) => b.id - a.id))
-        console.log(resources);
+        this.resources = resources.sort((a, b) => b.id - a.id);
       },
       error => alert('Erro ao carregar a lista')
     );

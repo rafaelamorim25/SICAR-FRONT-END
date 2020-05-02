@@ -55,7 +55,7 @@
                             <tr *ngFor="let venda of resource.vendas">
                                 <td>{{ venda.data }}</td>
                                 <td>R$ {{ venda.valor }}</td>
-                                <td>A vista</td>
+                                <td>{{ venda.formaPagamento.descricao }}</td>
 
                                 <td><a routerLink="/vendas/{{ venda.id }}/edit"><i
                                             class="fas fa-edit text-primary"></i></a>
