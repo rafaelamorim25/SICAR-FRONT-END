@@ -27,10 +27,10 @@ export class ClienteDetailsComponent extends BaseResourceFormComponent<Cliente> 
     protected buildResourceForm() {
       this.resourceForm = this.formBuilder.group({
         id: [null],
-        nome: [null, [Validators.required, Validators.minLength(2)]],
-        cpf: [null, [Validators.required]],
-        contato: [null, [Validators.required]],
-        saldo: [null, [Validators.required]]
+        nome: [{value: null, disabled: true}, [Validators.required, Validators.minLength(2)]],
+        cpf: [{value: null, disabled: true}, [Validators.required]],
+        contato: [{value: null, disabled: true}, [Validators.required]],
+        saldo: [{value: null, disabled: true}, [Validators.required]]
       });
     }
 

@@ -1,14 +1,20 @@
-<app-default-navbar [(collapsed)]="status"></app-default-navbar>
-<app-default-sidebar [collapsed]="status"></app-default-sidebar>
-<div id="viewport">
-    <!-- Content -->
-    <div id="content">
-        <nav class="navbar navbar-default">
-        </nav>
-        <div class="container-fluid">
-            <router-outlet></router-outlet>
+<div *ngIf="!estouNoLogin()">
+    <app-default-navbar [(collapsed)]="status"></app-default-navbar>
+    <app-default-sidebar [collapsed]="status"></app-default-sidebar>
+    <div id="viewport">
+        <!-- Content -->
+        <div id="content">
+            <nav class="navbar navbar-default">
+            </nav>
+            <div class="container-fluid">
+                <router-outlet></router-outlet>
+            </div>
         </div>
     </div>
+</div>
+
+<div *ngIf="estouNoLogin()">
+    <router-outlet></router-outlet>
 </div>
 
 <div class="footer text-center">

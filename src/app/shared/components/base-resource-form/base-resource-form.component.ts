@@ -10,7 +10,7 @@ import { switchMap } from 'rxjs/operators';
 import toastr from 'toastr';
 
 
-export abstract class BaseResourceFormComponent<T extends BaseResourceModel<any>> implements OnInit, AfterContentChecked{
+export abstract class BaseResourceFormComponent<T extends BaseResourceModel<any>> implements OnInit{
 
   currentAction: string;
   resourceForm: FormGroup;
@@ -37,8 +37,6 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel<any>
     this.loadResource();
     this.buildResourceForm();
   }
-
-  ngAfterContentChecked(){}
 
   submitForm(){
     this.submittingForm = true;
@@ -76,7 +74,6 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel<any>
 
   protected createResource(){
     let resource: T = this.jsonDataToResourceFn(this.resourceForm.value);
-    console.log(JSON.stringify(resource));
     this.resourceService.create(resource)
       .subscribe(
         resource => this.actionsForSuccess(resource),
@@ -87,8 +84,6 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel<any>
   protected updateResource(){
     let resource: T = this.jsonDataToResourceFn(this.resourceForm.value);
     Object.keys(resource).forEach(key => resource[key] === undefined && delete resource[key]);
-    console.log('Resource que vai ser atualizado ->')
-    console.log(JSON.stringify(resource));
     this.resourceService.update(resource)
       .subscribe(
         resource => this.actionsForSuccess(resource),
@@ -101,7 +96,6 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel<any>
 
     const baseComponentPath: string = this.route.snapshot.parent.url[0].path;
 
-    // redirect/reload component page
     this.router.navigateByUrl(baseComponentPath, {skipLocationChange: true})
   }
 

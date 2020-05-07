@@ -31,7 +31,6 @@ export class RecebimentoFormComponent extends BaseResourceFormComponent<Recebime
   }
 
   loadResource() {
-    console.log('CurrentAction' + this.currentAction);
     if (this.currentAction === 'edit') {
       console.log('Mandou carregar para editar');
       this.route.paramMap.pipe(
@@ -42,14 +41,11 @@ export class RecebimentoFormComponent extends BaseResourceFormComponent<Recebime
           this.resource = resource;
           this.resource.clienteId = this.resource.cliente.id
           this.resourceForm.patchValue(resource) // binds loaded resource data to resourceForm
-          console.log('Oque foi carregado do servidor ->>>');
-          console.log(resource);
         },
         (error) => alert('Ocorreu um erro no servidor, tente mais tarde.')
       )
     }
     if (this.currentAction === 'new') {
-      console.log('Mandou carregar para criar');
       let clienteService: ClienteService;
 
       clienteService = new ClienteService(this.injector);
@@ -62,8 +58,6 @@ export class RecebimentoFormComponent extends BaseResourceFormComponent<Recebime
           this.resource.cliente = resource;
           this.resource.clienteId = this.resource.cliente.id;
           this.resourceForm.patchValue(this.resource) // binds loaded resource data to resourceForm
-          console.log('Oque foi carregado do servidor ->>>');
-          console.log(resource);
         },
         (error) => alert('Ocorreu um erro no servidor, tente mais tarde.')
       )

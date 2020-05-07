@@ -21,6 +21,9 @@ export class LoginService {
             localStorage.setItem('Authorization', r.headers.get('Authorization'));
             this.router.navigate(['/clientes']);
           }
+      },
+      error => {
+          alert('Login ou senha inválidos');
       }
     );
   }

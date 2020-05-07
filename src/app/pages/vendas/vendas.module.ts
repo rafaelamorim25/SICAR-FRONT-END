@@ -5,13 +5,15 @@ import { SharedModule } from '../../shared/shared.module';
 import { VendasRoutingModule } from './vendas-routing.module';
 import { VendaFormComponent } from './venda-form/venda-form.component';
 import { VendaListComponent } from './venda-list/venda-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [VendaFormComponent, VendaListComponent],
   imports: [
     CommonModule,
     SharedModule,
-    VendasRoutingModule
+    VendasRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class VendasModule { }
