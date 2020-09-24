@@ -11,7 +11,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 export class RecebimentosReportService extends BaseResourceService<RecebimentosReport> {
 
   constructor(protected injector: Injector) {
-    super('https://sicar-app.herokuapp.com/relatorios/recebimentos', injector, RecebimentosReport.fromJson);
+    super('https://sicar-app.herokuapp.com/relatorios/report', injector, RecebimentosReport.fromJson);
   }
 
   getRelatorio(intervalo: Intervalo): Observable<RecebimentosReport> {

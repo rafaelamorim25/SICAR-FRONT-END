@@ -21,7 +21,7 @@ export class LancamentosReportComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.relatorio = new RecebimentosReport(0.00);
+    this.relatorio = new RecebimentosReport(0, 0, 0, 0, 0, 0, 0, 0);
     this.intervaloForm = this.formBuilder.group({
       inicio: ['', Validators.required],
       fim: ['', Validators.required]

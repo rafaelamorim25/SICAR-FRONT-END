@@ -21,7 +21,7 @@ constructor(
   protected buildResourceForm() {
     this.resourceForm = this.formBuilder.group({
       id: [null],
-      nome: [null, [Validators.required, Validators.minLength(6)]],
+      nome: [null, [Validators.required, Validators.minLength(10)]],
       cpf: [null, [Validators.required, Validators.minLength(11)]],
       contato: [null, [Validators.required, Validators.minLength(11)]]
     });

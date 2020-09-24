@@ -26,8 +26,8 @@ export class VendaFormComponent extends BaseResourceFormComponent<Venda>{
   protected buildResourceForm() {
     this.resourceForm = this.formBuilder.group({
       id: [null],
-      valor: [null],
-      data: [null],
+      valor: [null, [Validators.required, Validators.min(0)]],
+      data: [null, [Validators.required, Validators.pattern("^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/[12][0-9]{3}$")]],
       clienteId: [null],
       formaPagamentoId: [null]
     });
@@ -66,4 +66,15 @@ export class VendaFormComponent extends BaseResourceFormComponent<Venda>{
       )
     }
   }
+
+  protected updateResource(){
+    let resource: Venda = this.jsonDataToResourceFn(this.resourceForm.value);
+    Object.keys(resource).forEach(key => resource[key] === undefined && delete resource[key]);
+    this.resourceService.update(resource)
+      .subscribe(
+        resource => this.actionsForSuccess(resource),
+        error => this.actionsForError(error)
+      )
+  }
+
 }

@@ -1,26 +1,25 @@
-<div class="container-fluid" style="margin-top:50px;">
+<div class="container-fluid" style="margin-top:60px;">
     <div class="card">
         <div class="card-body">
             <div class="row">
-                <div class="col-10">
+                <div class="col-2">
                     <h4><i class="fas fa-users text-primary"></i> Clientes</h4>
                 </div>
-                <div class="col-2">
+                <div class="col-7">
+                    <form [formGroup]="searchForm" (click)="search()">
+                        <div class="row form-group">
+                            <div class="form-group col-md-9" style="text-align: left">
+                                <input type="text" class="form-control" name="keyword" id="keyword" placeholder="Pesquise um Cliente" formControlName="keyword">
+                            </div>
+                            <div class="form-group col-md-3" style="text-align: right">
+                                <button type="submit" class="btn btn-primary form-control md-2">Buscar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-3" align="right">
                     <a routerLink="new"><button type="button" class="btn btn-primary" style="margin-left:50px;">Adicionar</button></a>
                 </div>
-            </div>
-            <hr>
-            <div class="container mb-4" align="center">
-                <form [formGroup]="searchForm" (click)="search()" class="col-6">
-                    <div class="row form-group">
-                        <div class="form-group col-md-9" style="text-align: left">
-                            <input type="text" class="form-control" name="keyword" id="keyword" placeholder="Pesquise um cliente" formControlName="keyword">
-                        </div>
-                        <div class="form-group col-md-3" style="text-align: right">
-                            <button type="submit" class="btn btn-primary form-control md-2">Buscar</button>
-                        </div>
-                    </div>
-                </form>
             </div>
             <hr>
             <table class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -44,7 +43,7 @@
                                 <i class="fas fa-list text-primary"></i>
                             </a>
                         </td>
-                        <td class="text-danger">R$ {{ cliente.saldo }}</td>
+                        <td class="text-danger">{{ cliente.saldo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}}</td>
                         <td>
                             <a [routerLink]="[cliente.id, 'edit']">
                                 <i class="fas fa-edit text-primary mr-3"></i>

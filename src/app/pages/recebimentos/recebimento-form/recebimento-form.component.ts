@@ -24,8 +24,8 @@ export class RecebimentoFormComponent extends BaseResourceFormComponent<Recebime
   protected buildResourceForm() {
     this.resourceForm = this.formBuilder.group({
       id: [null],
-      valor: [null],
-      data: [null],
+      valor: [null, [Validators.required, Validators.min(0)]],
+      data: [null, [Validators.required, Validators.pattern("^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/[12][0-9]{3}$")]],
       clienteId: [null]
     });
   }

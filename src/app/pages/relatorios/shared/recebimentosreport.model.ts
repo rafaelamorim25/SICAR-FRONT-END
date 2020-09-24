@@ -3,8 +3,14 @@ import { Recebimento } from '../../recebimentos/shared/recebimento.model';
 
 export class RecebimentosReport extends BaseResourceModel<number> {
     constructor(
-      public total?: number,
-      public recebimentos?: Array<Recebimento>,
+      public countClientes?: number,
+      public countVendas?: number,
+      public countRecebimentos?: number,
+      public totalRecebimentos?: number,
+      public totalVendas?: number,
+      public totalRecebimentosPeriodo?: number,
+      public totalVendasPeriodo?: number,
+      public ticketMedio?: number
     ) {
       super();
     }

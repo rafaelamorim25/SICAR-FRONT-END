@@ -43,7 +43,15 @@ export class ClienteDetailsComponent extends BaseResourceFormComponent<Cliente> 
     }
 
     deleteVenda(venda: Venda) {
-      const mustDelete = confirm(`
+
+      if (venda.formaPagamento === 'A prazo' && this.resource.saldo - venda.valor < 0){
+
+        const mustDelete = confirm(`
+        Essa venda não pode ser excluída, pois o valor  dívida não pode ficar negativa, exclua os recebimentos previamente
+        `);
+        
+      }else{
+        const mustDelete = confirm(`
         Deseja realmente excluir esta venda?
         Data: ${venda.data}
         Valor: ${venda.valor}
@@ -57,6 +65,7 @@ export class ClienteDetailsComponent extends BaseResourceFormComponent<Cliente> 
               this.router.navigate(['/vendas']),
             () => alert('Erro ao tentar excluir!')
           );
+      }
       }
     }
 

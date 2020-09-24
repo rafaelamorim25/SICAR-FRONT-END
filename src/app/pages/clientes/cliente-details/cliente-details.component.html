@@ -22,7 +22,7 @@
                     </div>
                     <div class="form-group col-3">
                         <label for="saldo">Dívida</label> <input type="text" class="form-control  bg-white" id="saldo"
-                        value="R$ {{resource.saldo}}" disabled="disabled">
+                        value="{{resource.saldo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}}" disabled="disabled">
                     </div>
                 </div>
             </form>
@@ -54,7 +54,7 @@
                         <tbody align="center">
                             <tr *ngFor="let venda of resource.vendas">
                                 <td>{{ venda.data }}</td>
-                                <td>R$ {{ venda.valor }}</td>
+                                <td>{{ venda.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }}</td>
                                 <td>{{ venda.formaPagamento.descricao }}</td>
 
                                 <td><a routerLink="/vendas/{{ venda.id }}/edit"><i
@@ -87,7 +87,7 @@
                         <tbody align="center">
                             <tr *ngFor="let recebimento of resource.recebimentos">
                                 <td>{{ recebimento.data }}</td>
-                                <td> R$ {{ recebimento.valor }}</td>
+                                <td>{{ recebimento.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }}</td>
                                 <td><a routerLink="/recebimentos/{{ recebimento.id }}/edit"><i
                                             class="fas fa-edit text-primary"></i></a> 
                                             <a [routerLink]="[]" (click)="deleteRecebimento(recebimento)"><i
