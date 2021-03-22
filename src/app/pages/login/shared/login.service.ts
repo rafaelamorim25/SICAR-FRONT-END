@@ -11,7 +11,7 @@ export class LoginService {
 
   login(user: Usuario){
     const headers: HttpHeaders = new HttpHeaders();
-    headers.set('Content-Type', 'application/x-www-form-urlencoded');
+    headers.set('Content-Type', 'application/json');
     const resp: Observable<HttpResponse<any>> = this.http.post<HttpResponse<any>>
     ('https://sicar-app.herokuapp.com/login', JSON.stringify(user), {headers: headers, observe: 'response'});
 

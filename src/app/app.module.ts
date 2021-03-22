@@ -9,10 +9,12 @@ import { CoreModule } from './core/core.module';
 import { LoginService } from './pages/login/shared/login.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './core/Intercept.service';
+import { ExcluirEmpresaDialogComponent } from './pages/manter-empresa/excluir-empresa-dialog/excluir-empresa-dialog.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ExcluirEmpresaDialogComponent
   ],
   imports: [
     IMaskModule,
